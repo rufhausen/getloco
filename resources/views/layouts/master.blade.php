@@ -34,6 +34,12 @@
     <!-- /.container-fluid -->
 </nav>
 <div class="container" style="min-height: 500px">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            @include('partials.messages')
+        </div>
+    </div>
+
     @yield('content')
     <div class="row">
         <div id="footer" class="col-md-12">

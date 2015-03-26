@@ -15,13 +15,17 @@ demo: [getloco.electricwerks.com](http://getloco.electricwerks.com)
 
 ***Store Location*** 
 
-```POST /api/v1/location```
+```POST /api/v1/locations```
 
 ***Update Location***
 
-```PUT /api/v1/location/{id}```
+```PUT /api/v1/locations/{id}```
 
 ***Delete Location***
 
-```DELETE /api/v1/location/{id}```
+```DELETE /api/v1/locations/{id}```
+
+***Compare two locations for a common ancestor***
+
+```GET /api/v1/locations/{id1}/{id2}```
 

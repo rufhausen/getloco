@@ -4,9 +4,13 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Repositories\LocationApi;
 use Illuminate\Http\Request;
+use App\Http\ValidationTrait;
 
 class LocationController extends Controller
 {
+
+    use ValidationTrait;
+
     public function __construct(LocationApi $location)
     {
         $this->location = $location;
@@ -31,6 +35,21 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'name'           => 'required',
+            'street_address' => 'required'
+        ];
+        $messages = [
+            'name.required' => 'C\'mon man. At least give it a name.',
+            'street_address.required' => 'A street address would be really helpful here.'
+        ];
+
+        $this->validator($request->input(), $rules, $messages);
+
+        if ($this->errors) {
+            return redirect()->back()->withErrors($this->errors);
+        }
+
         $this->location->store($request->input());
 
         return redirect()->to('/');
@@ -60,7 +79,7 @@ class LocationController extends Controller
         $location = $this->location->getById($id)['location'];
         $locations = $this->location->getAll();
 
-        return view('location.edit', compact('location','locations'));
+        return view('location.edit', compact('location', 'locations'));
     }
 
     /**
