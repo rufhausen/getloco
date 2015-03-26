@@ -36,7 +36,7 @@
             @endif
         </div>
     </div>
-    @foreach($locations as $location)
+    @if($locations)
         <div id="delete-location-modal-{{$location['id']}}" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
