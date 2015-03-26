@@ -3,7 +3,7 @@
 
 *Note: This is a test application and has no real-world use.*
 
-####DEMO: [getloco.electricwerks.com](http://getloco.electricwerks.com)####
+demo: [getloco.electricwerks.com](http://getloco.electricwerks.com)
 
 ***Get All Locations***
 
