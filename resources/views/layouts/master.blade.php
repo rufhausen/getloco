@@ -26,7 +26,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
                 <li><a href="/location/create">Add New Location</a></li>
-
+                <li><a href="https://github.com/rufhausen/getloco/blob/master/readme.md" target="_blank">API Doc</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
