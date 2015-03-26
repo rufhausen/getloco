@@ -1,7 +1,7 @@
 
 ##Get Loco API Documentation
 
-*Note:: This is a test application and has no real-world use.*
+*Note: This is a test application and has no real-world use.*
 
 
 ***Get All Locations***
