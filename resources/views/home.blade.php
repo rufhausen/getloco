@@ -6,6 +6,7 @@
     </script>
     <div class="row">
         <div class="col-md-12">
+            @if ($locations)
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -30,6 +31,9 @@
                 @endforeach
                 </tbody>
             </table>
+                @else
+            <h3>No locations yet. Add one.</h3>
+                @endif
         </div>
     </div>
 
