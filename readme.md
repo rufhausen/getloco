@@ -9,7 +9,7 @@ demo: [getloco.electricwerks.com](http://getloco.electricwerks.com)
 
 ```GET /api/v1/locations```
 
-***Get Location by ID***
+***Get Location by ID (also returns parents and children)***
 
 ```GET /api/v1/locations/{id}```
 
