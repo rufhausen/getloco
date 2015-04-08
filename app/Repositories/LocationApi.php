@@ -59,6 +59,6 @@ class LocationApi
 
     public function delete($id)
     {
-        $this->client->delete($id);
+        $this->client->delete('locations/'. $id);
     }
 }

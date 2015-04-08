@@ -28,6 +28,31 @@
                             <td>{{$location['latitude']}}</td>
                             <td>{{$location['longitude']}}</td>
                         </tr>
+                        @if($locations)
+                            <div id="delete-location-modal-{{$location['id']}}" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">Delete Location</h4>
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure you want to delete this location"?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            {!!Form::open(array('method' => 'DELETE','url' => '/location/'.$location['id']))!!}
+                                            {!!Form::submit('Yes',array('class' => 'btn btn-danger'))!!}
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Cancel
+                                            </button>
+                                            {!!Form::close()!!}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+
                     @endforeach
                     </tbody>
                 </table>
@@ -36,29 +61,5 @@
             @endif
         </div>
     </div>
-    @if($locations)
-        <div id="delete-location-modal-{{$location['id']}}" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Delete Location</h4>
-                        </h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Are you sure you want to delete this location"?</p>
-                    </div>
-                    <div class="modal-footer">
-                        {!!Form::open(array('method' => 'DELETE','url' => '/location/'.$location['id']))!!}
-                        {!!Form::submit('Yes',array('class' => 'btn btn-danger'))!!}
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Cancel
-                        </button>
-                        {!!Form::close()!!}
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endif
 
 @endsection
